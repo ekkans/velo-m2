@@ -1,16 +1,32 @@
 doctype html
-html
+html lang=I18n.locale
   head
-    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    base href="/"
+
     title
-      = content_for?(:title) ? yield(:title) : 'App'
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'App'}"
-    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
-    == javascript_include_tag 'application', 'data-turbolinks-track' => true
-    == csrf_meta_tags
-  body
-    header
+      = content_for?(:title) ? yield(:title) : "Vélo M2"
+
+    link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"
+    = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = js_env
+    = csrf_meta_tags
+
+  body ng-controller="MainCtrl"
+    header#header data-turbolinks-permanent=""
       == render 'layouts/navigation'
     main[role="main"]
-      == render 'layouts/messages'
-      == yield
+      - if ['sessions', 'registrations', 'passwords', 'confirmations', 'unlocks'].include?(controller_name)
+        .container
+          .row
+            .col-md-6.col-md-offset-3
+              == render 'layouts/messages'
+              == yield
+      - else
+        .container
+          == render 'layouts/messages'
+          == yield
+      div growl=""

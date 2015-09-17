@@ -10,8 +10,42 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require modernizr-history
+//= require modernizr-svg
+//
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//
+//= require sugar
+//= require bootstrap
 //= require turbolinks
-//= require bootstrap-sprockets
-//= require_tree .
+//
+//= require moment
+//= require moment/locale/fr
+//= require moment/locale/es
+//
+//= require angular
+//= require ngstorage
+//= require angular-bootstrap
+//= require angular-local-storage
+//= require angular-cache
+//= require angular-sanitize
+//= require angular-moment
+//= require angular-translate
+//= require angular-translate-loader-static-files
+//= require angular-filter
+//= require angular-http-auth
+//= require humps
+//= require angular-growl-v2
+//
+//= require angular-rails-templates
+//= require_tree ../templates
+//
+// apiCheck must appear before formly
+//= require api-check
+//= require angular-formly
+//= require angular-formly-templates-bootstrap
+//
+//= require app/init
+//= require_tree ./app

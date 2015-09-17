@@ -27,23 +27,6 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
-    port: 587,
-    domain: Rails.application.secrets.domain_name,
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: Rails.application.secrets.email_provider_username,
-    password: Rails.application.secrets.email_provider_password
-  }
-  # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.raise_delivery_errors = true
-  # Send email in development mode?
-  config.action_mailer.perform_deliveries = true
-
-
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
@@ -55,4 +38,22 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # ActionMailer Config
+  config.action_mailer.asset_host = { host: ENV["HOST"] }
+  config.action_mailer.default_url_options = { host: ENV["HOST"] }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  # Mailcatcher
+  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
+
+  # https://github.com/kikonen/ngannotate-rails
+  config.ng_annotate.process = true
+  if ENV['NG_FORCE'] == 'true'
+    config.assets.js_compressor = :uglifier
+    config.assets.compress = true
+    config.assets.compile = false
+    config.assets.digest = true
+    config.assets.debug = false
+  end
 end
