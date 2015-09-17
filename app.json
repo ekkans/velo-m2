@@ -1,0 +1,12 @@
+{
+  "name":"velo-m2",
+  "scripts":{},
+  "env":{
+    "HOST":{
+      "required":true
+    }
+  },
+  "addons":[
+    "sendgrid"
+  ]
+}
