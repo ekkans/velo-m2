@@ -70,21 +70,27 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
-    port: 587,
-    domain: ENV['HOST'],
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["SENDGRID_USERNAME"],
-    password: ENV["SENDGRID_PASSWORD"]
+    port: '25', # or 2525
+    address: ENV['POSTMARK_SMTP_SERVER'],
+    user_name: ENV['POSTMARK_API_TOKEN'],
+    password: ENV['POSTMARK_API_TOKEN'],
   }
   # ActionMailer Config
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    },
+    bucket: ENV['AWS_BUCKET'],
+    s3_host_name: ENV['AWS_S3_HOST_NAME']
+  }
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new

@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    locales = ['en']
+    locales = ENV['LOCALES'].split(' ')
     I18n.locale = if user_signed_in? && current_user.locale.present?
                     current_user.locale
                   elsif session[:locale].present?

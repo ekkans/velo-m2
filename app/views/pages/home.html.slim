@@ -1,1 +1,12 @@
-img.img-responsive src="/assets/logo.png"
+.jumbotron
+
+  p.lead= t('js.homepage.intro')
+
+.row ng-controller="GalleryCtrl"
+
+  .col-md-10.col-md-offset-1 ng-if="slides"
+
+    div
+      carousel no-wrap="noWrapSlides"
+        slide active="slide.active" ng-repeat="slide in slides"
+          img ng-src="{{slide.imageUrl}}" style="margin:auto;"

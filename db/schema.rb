@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917210841) do
+ActiveRecord::Schema.define(version: 20150919155359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +32,19 @@ ActiveRecord::Schema.define(version: 20150917210841) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "slides", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "position"
+    t.integer  "gallery_id"
+  end
+
+  add_index "slides", ["gallery_id"], name: "index_slides_on_gallery_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -77,4 +96,5 @@ ActiveRecord::Schema.define(version: 20150917210841) do
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
   add_index "versions", ["transaction_id"], name: "index_versions_on_transaction_id", using: :btree
 
+  add_foreign_key "slides", "galleries"
 end

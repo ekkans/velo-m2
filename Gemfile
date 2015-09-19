@@ -81,6 +81,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+# Loads environment variables from `.env`.
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Fishes out the Accept-Language header into an array.
 gem 'http_accept_language'

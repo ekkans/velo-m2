@@ -7,6 +7,6 @@
     }
   },
   "addons":[
-    "sendgrid"
+    "postmark"
   ]
 }

@@ -10,17 +10,26 @@ en:
   js:
     # Navigation
     home: "home"
-    profiles: "profiles"
+    our_history: "our history"
+    modules: "modules"
+    contact: "contact"
+    discussion_board: "discussion board"
+    blog: "blog"
     sign_out: "Sign out"
     sign_in: "Sign in"
     sign_up: "Sign up"
-    edit_my_profile: "Edit my profile"
     save: "save"
     or: "or"
-    edit_profile: "Edit profile"
     in: "in"
     close: "close"
     next: "next"
     previous: "previous"
     edit: "edit"
+
+    # Home page
+    homepage:
+      intro: "Vélo M2 is a Multi Modular cargo bike community that ames to build all kind of modules
+        so any cargo bike can be used in any situation."
+
+    # User managment
     send_me_reset_password_instructions: "Send me reset password instructions"
