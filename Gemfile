@@ -161,3 +161,4 @@ gem 'paper_trail'
 # Easy file attachment management for ActiveRecord
 # Only used by ckeditor
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '~> 1.5.7'
