@@ -28,8 +28,7 @@ en:
 
     # Home page
     homepage:
-      intro: "Vélo M2 is a Multi Modular cargo bike community that ames to build all kind of modules
-        so any cargo bike can be used in any situation."
+      intro: "The cargo bike is a great alternative for the car in congested cities; with our stackable modules we give sustainable initiatives endless possibilities. Vélo M² (pronounced Vélo em carree) is a multi modular capsule system fitting on cargo bikes. With our energy module supplied by solar and pedal power you can have the electricity on location to power an open-air cinema, a mobile fablab and much more on top. We bring all these plans to an open source platform and community where anybody can contribute. Cargo Bikes can be used for more then only transport, with Vélo M2 we give the tools to rethink how we interact, move and use energy."
 
     # User managment
     send_me_reset_password_instructions: "Send me reset password instructions"
