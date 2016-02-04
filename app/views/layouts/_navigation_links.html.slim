@@ -1,18 +1,35 @@
 ul.nav.navbar-nav
   li
-    a href="#"
-      = t('js.our_history').capitalize
+    a href=concept_path
+      = t('js.concept').capitalize
   li
     a href="#"
-      = t('js.modules').capitalize
+      = "1. "
+      = t('js.energy').capitalize
+  li.dropdown
+    a.dropdown-toggle data-toggle="dropdown" href="#"
+      = "2. "
+      = t('js.platform').capitalize
+      b.caret
+    ul.dropdown-menu
+      li
+        a href=how_to_join_path
+          = "2.1. "
+          = t('js.how_to_join').capitalize
+          = "?"
+      li
+        a href="#"
+          = "2.2. "
+          = t('js.modules').capitalize
   li
     a href="#"
+      = "3. "
+      = t('js.activity').capitalize
+  li
+    a href=contact_path
       = t('js.contact').capitalize
   li
-    a href="#"
-      = t('js.discussion_board').capitalize
-  li
-    a href="#"
+    a href=ENV['BLOG_URL'] target="_blank"
       = t('js.blog').capitalize
 
 ul.nav.navbar-nav.navbar-right

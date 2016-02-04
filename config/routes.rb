@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'pages#home'
+  get 'concept' => 'pages#concept', as: 'concept'
+  get 'contact' => 'pages#contact', as: 'contact'
+  get 'how-to-join' => 'pages#how_to_join', as: 'how_to_join'
 
   resources :locales, controller: :translations, only: :show
 

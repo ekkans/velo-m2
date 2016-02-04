@@ -10,10 +10,13 @@ en:
   js:
     # Navigation
     home: "home"
-    our_history: "our history"
+    concept: "concept"
+    energy: "energy"
+    platform: "energy"
+    how_to_join: "how to join"
     modules: "modules"
+    activity: "activity"
     contact: "contact"
-    discussion_board: "discussion board"
     blog: "blog"
     sign_out: "Sign out"
     sign_in: "Sign in"
