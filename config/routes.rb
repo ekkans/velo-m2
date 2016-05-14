@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   get 'concept' => 'pages#concept', as: 'concept'
   get 'contact' => 'pages#contact', as: 'contact'
   get 'how-to-join' => 'pages#how_to_join', as: 'how_to_join'
+  get 'community' => 'pages#community', as: 'community'
+  get 'renting' => 'pages#renting', as: 'renting'
+  get 'partnership' => 'pages#partnership', as: 'partnership'
+  get 'co-creation' => 'pages#co_creation', as: 'co_creation'
+  get 'coreteam' => 'pages#coreteam', as: 'coreteam'
+  get 'fairshare' => 'pages#fairshare', as: 'fairshare'
 
   resources :locales, controller: :translations, only: :show
 

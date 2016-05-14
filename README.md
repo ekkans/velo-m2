@@ -1,5 +1,5 @@
 Vélo M2
-================
+=======
 
 A set of specialized, fun, exchangeable plug-and-play modules
 for the open source cargo bike "XYZ Cargo" (developed by Till Wolfer and the N55 collective),

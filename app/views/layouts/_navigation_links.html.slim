@@ -9,18 +9,33 @@ ul.nav.navbar-nav
   li.dropdown
     a.dropdown-toggle data-toggle="dropdown" href="#"
       = "2. "
-      = t('js.platform').capitalize
+      = t('js.community').capitalize
       b.caret
     ul.dropdown-menu
       li
-        a href=how_to_join_path
+        a href=community_path
           = "2.1. "
-          = t('js.how_to_join').capitalize
-          = "?"
+          = t('js.community_velo_m2').capitalize
       li
-        a href="#"
+        a href=renting_path
           = "2.2. "
-          = t('js.modules').capitalize
+          = t('js.renting').capitalize
+      li
+        a href=partnership_path
+          = "2.3. "
+          = t('js.partnership').capitalize
+      li
+        a href=co_creation_path
+          = "2.4. "
+          = t('js.co_creation').capitalize
+      li
+        a href=coreteam_path
+          = "2.5. "
+          = t('js.coreteam').capitalize
+      li
+        a href=fairshare_path
+          = "2.6. "
+          = t('js.fairshare').capitalize
   li
     a href="#"
       = "3. "
