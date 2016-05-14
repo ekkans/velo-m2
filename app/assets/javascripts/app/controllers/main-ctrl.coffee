@@ -22,8 +22,6 @@ MainCtrl = ($scope, $location, authService, Rails, User, AccessToken) ->
     else
       setLoggedIn()
 
-  logIn()
-
 angular
   .module 'app'
   .controller 'MainCtrl', MainCtrl
