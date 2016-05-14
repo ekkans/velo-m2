@@ -88,7 +88,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'http_accept_language'
 
 # Flexible authentication solution for Rails with Warden.
-gem 'devise'
+gem 'devise', '< 4.0' # devise > 4.0 requires Ruby version >= 2.1.0
 gem 'rolify', github: 'EppO/rolify' # issues/221
 
 # Authorization library which restricts what resources a given user is allowed to access.
