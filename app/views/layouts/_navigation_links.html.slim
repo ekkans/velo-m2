@@ -2,10 +2,24 @@ ul.nav.navbar-nav
   li
     a href=concept_path
       = t('js.concept').capitalize
-  li
-    a href="#"
+  li.dropdown
+    a.dropdown-toggle data-toggle="dropdown" href="#"
       = "1. "
       = t('js.energy').capitalize
+      b.caret
+    ul.dropdown-menu
+      li
+        a href=battery_path
+          = "1.1. "
+          = t('js.battery').capitalize
+      li
+        a href=generation_path
+          = "1.2. "
+          = t('js.generation').capitalize
+      li
+        a href=future_path
+          = "1.3. "
+          = t('js.future').capitalize
   li.dropdown
     a.dropdown-toggle data-toggle="dropdown" href="#"
       = "2. "
@@ -36,10 +50,32 @@ ul.nav.navbar-nav
         a href=fairshare_path
           = "2.6. "
           = t('js.fairshare').capitalize
-  li
-    a href="#"
+  li.dropdown
+    a.dropdown-toggle data-toggle="dropdown" href="#"
       = "3. "
-      = t('js.activity').capitalize
+      = t('js.activity.title')
+      b.caret
+    ul.dropdown-menu
+      li
+        a href=activity_introduction_path
+          = "3.1. "
+          = t('js.activity.introduction')
+      li
+        a href=activity_open_path
+          = "3.2. "
+          = t('js.activity.open')
+      li
+        a href=activity_canal_path
+          = "3.3. "
+          = t('js.activity.canal')
+      li
+        a href=activity_sessions_path
+          = "3.4. "
+          = t('js.activity.sessions')
+      li
+        a href=activity_events_path
+          = "3.5. "
+          = t('js.activity.events')
   li
     a href=contact_path
       = t('js.contact').capitalize
